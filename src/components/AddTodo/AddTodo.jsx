@@ -3,18 +3,17 @@ import styles from "./AddTodo.module.css";
 import { v4 as uuidv4 } from 'uuid';
 
 
-export default function AddTodo({ todos, onAdd }) {
+export default function AddTodo({ onAdd }) {
   const [text, setText] = useState("");
   const handleChange = (e) => setText(e.target.value);
   const handleSubmit = (e) => {
     e.preventDefault();
-    onAdd({ id: uuidv4(), text, checked: false });
-    console.log(todos)
+    onAdd({ id: uuidv4(), text, status: "Doing" });
     setText("");
   };
 
   return (
-    <form className="form" onSubmit={handleSubmit}>
+    <form className={styles.form} onSubmit={handleSubmit}>
       <input
         className={styles.input}
         type="text"

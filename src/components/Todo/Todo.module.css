@@ -1,22 +1,27 @@
 .todo {
-  display: flex;
   background-color: var(--color-todo-bg);
   border-bottom: 0.1rem var(--color-accent2) solid;
-  margin-bottom: 1rem;
-  align-items: center;
-  margin: 1rem;
+  display: flex;
   justify-content: space-between;
+  align-items: center;
+  font-size: 1.2rem;
+  padding: 0 1rem 0 0;
 }
 
 .checkbox {
-    width: 1.5rem;
-    height: 1.5rem;
-    accent-color: var(--color-accent1);
+  width: 1.5rem;
+  height: 1.5rem;
+  accent-color: var(--color-accent);
 }
 
 .button {
-  height: 2rem;
-  border: 0.1rem var(--color-accent1) solid;
+  width: 5rem;
+  height: 2.2rem;
+  font-size: 1.2rem;
   border-radius: 0.5rem;
-  background-color: var(--color-accent2);
+  background-color: var(--color-accent);
+}
+
+.button:hover {
+  font-weight: 600;
 }
