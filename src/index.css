@@ -1,7 +1,9 @@
 :root {
-  --color-accent: rgb(148, 202, 223);
+  --color-bg: rgb(148, 202, 223);
+  --color-accent: rgb(38, 153, 199);
   --color-border: #1E1E1E;
   --color-text: rgba(30, 25, 43, 0.78);
+  --color-white: #e7e7e7;
   --shadow: 1rem 1rem 3rem 0 rgba(0, 0, 0, 0.75);
 }
 
@@ -18,7 +20,7 @@ body {
   -moz-osx-font-smoothing: grayscale;
   width: 100vw;
   height: 100vh;
-  background: var(--color-accent);
+  background: var(--color-bg);
   display: flex;
   justify-content: center;
   align-items: center;
@@ -49,7 +51,7 @@ button {
 }
 
 ::-webkit-scrollbar-track {
-  background: #f1f1f1;
+  background: var(--color-white);
 }
 
 ::-webkit-scrollbar-thumb {

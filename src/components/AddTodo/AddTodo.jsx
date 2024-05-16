@@ -8,7 +8,7 @@ export default function AddTodo({ onAdd }) {
   const handleChange = (e) => setText(e.target.value);
   const handleSubmit = (e) => {
     e.preventDefault();
-    onAdd({ id: uuidv4(), text, status: "Doing" });
+    onAdd({ id: uuidv4(), text, status: "Doing", editStatus: false });
     setText("");
   };
 

@@ -1,0 +1,9 @@
+.App {
+  width: 60vw;
+  height: 60vh;
+  background: rgba(217, 217, 217, 0.54);
+  border: 0.1rem solid var(--color-border);
+  box-shadow: var(--shadow);
+  -webkit-box-shadow: var(--shadow);
+  -moz-box-shadow: var(--shadow);
+}
