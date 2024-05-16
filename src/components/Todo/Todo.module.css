@@ -1,0 +1,22 @@
+.todo {
+  display: flex;
+  background-color: var(--color-todo-bg);
+  border-bottom: 0.1rem var(--color-accent2) solid;
+  margin-bottom: 1rem;
+  align-items: center;
+  margin: 1rem;
+  justify-content: space-between;
+}
+
+.checkbox {
+    width: 1.5rem;
+    height: 1.5rem;
+    accent-color: var(--color-accent1);
+}
+
+.button {
+  height: 2rem;
+  border: 0.1rem var(--color-accent1) solid;
+  border-radius: 0.5rem;
+  background-color: var(--color-accent2);
+}

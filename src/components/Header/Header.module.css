@@ -1,0 +1,25 @@
+.header {
+  height: 15%;
+  display: flex;
+  border-bottom: 0.2rem var(--color-accent1) solid;
+  background-color: var(--color-accent2);
+  border-radius: 0.5rem 0.5rem 0 0;
+  align-items: center;
+}
+
+.title {
+  margin: 1rem 2rem 1rem 1rem;
+}
+
+.button {
+  height: 100%;
+  background-color: transparent;
+  border: none;
+  font-size: 1.4rem;
+  color: var(--color-text);
+  margin-right: 0.5rem;
+}
+
+.button:hover {
+  transform: scale(1.1);
+}
