@@ -1,15 +1,24 @@
+import { v4 as uuidv4 } from "uuid";
+import { useRecoilState } from "recoil";
+import { todosState } from "../../recoil/todos";
+
 import React, { useState } from "react";
 import styles from "./AddTodo.module.css";
-import { v4 as uuidv4 } from 'uuid';
 
-
-export default function AddTodo({ onAdd }) {
+export default function AddTodo() {
+  const [todos, setTodos] = useRecoilState(todosState);
   const [text, setText] = useState("");
+
   const handleChange = (e) => setText(e.target.value);
   const handleSubmit = (e) => {
     e.preventDefault();
-    onAdd({ id: uuidv4(), text, status: "Doing", editStatus: false });
-    setText("");
+    if (text.trim().length != 0) {
+      setTodos([
+        ...todos,
+        { id: uuidv4(), text, status: "Doing", editStatus: false },
+      ]);
+      setText("");
+    }
   };
 
   return (

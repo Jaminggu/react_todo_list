@@ -1,25 +1,31 @@
-import { FaEdit } from "react-icons/fa";
-import styles from "./Todo.module.css";
-import { MdDeleteForever, MdSaveAs } from "react-icons/md";
 import { useState } from "react";
+import { FaEdit } from "react-icons/fa";
+import { useRecoilState } from "recoil";
+import { todosState } from "../../recoil/todos";
+import { MdDeleteForever, MdSaveAs } from "react-icons/md";
 
-export default function Todo({ todo, onUpdate, onDelete }) {
-  const { id, status, editStatus, text } = todo;
+import styles from "./Todo.module.css";
+
+export default function Todo({ todo }) {
+  const [todos, setTodos] = useRecoilState(todosState);
+  const { id, text, status, editStatus } = todo;
   const [inputText, setInputText] = useState(text);
 
-  const handleDelete = () => onDelete(todo);
+  const updateTodos = (updated) =>
+    setTodos(todos.map((item) => (item.id === id ? updated : item)));
+
+  const handleDelete = () => setTodos(todos.filter((item) => item.id != id));
   const handleChange = (e) => {
     const updatedStatus = e.target.checked ? "Done" : "Doing";
-    onUpdate({ ...todo, status: updatedStatus });
+    updateTodos({ ...todo, status: updatedStatus });
   };
   const handleEdit = () => {
-    const updatedEditStatus = !editStatus; // 새로운 editStatus 값을 계산
-    onUpdate({ ...todo, editStatus: updatedEditStatus });
+    updateTodos({ ...todo, editStatus: !editStatus });
   };
   const handleInputChange = (e) => {
     const updatedText = e.target.value;
     setInputText(updatedText);
-    onUpdate({ ...todo, text: updatedText });
+    updateTodos({ ...todo, text: updatedText });
   };
 
   return (
@@ -43,7 +49,7 @@ export default function Todo({ todo, onUpdate, onDelete }) {
         </>
       ) : (
         <>
-          <label htmlFor={id}>{todo.text}</label>
+          <label htmlFor={id}>{text}</label>
         </>
       )}
       <div>

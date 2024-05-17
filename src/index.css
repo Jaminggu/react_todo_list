@@ -1,7 +1,7 @@
 :root {
   --color-bg: rgb(148, 202, 223);
   --color-accent: rgb(38, 153, 199);
-  --color-border: #1E1E1E;
+  --color-border: #1e1e1e;
   --color-text: rgba(30, 25, 43, 0.78);
   --color-white: #e7e7e7;
   --shadow: 1rem 1rem 3rem 0 rgba(0, 0, 0, 0.75);

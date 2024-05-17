@@ -1,6 +1,7 @@
-import TodoList from "./components/TodoList/TodoList";
-import Header from "./components/Header/Header";
 import { useState } from "react";
+
+import Header from "./components/Header/Header";
+import TodoList from "./components/TodoList/TodoList";
 
 function App() {
   const filters = ["All", "Doing", "Done"];
@@ -9,7 +10,7 @@ function App() {
 
   return (
     <>
-      <Header filters={filters} onFilter={handleFilter}/>
+      <Header filters={filters} onFilter={handleFilter} />
       <TodoList filter={filter} />
     </>
   );

@@ -9,7 +9,11 @@ export default function Header({ filters, onFilter }) {
       <h1 className={styles.title}>{title}</h1>
       <div>
         {filters.map((filter) => (
-          <button key = {filter} className={styles.button} onClick={() => onFilter(filter)}>
+          <button
+            key={filter}
+            className={styles.button}
+            onClick={() => onFilter(filter)}
+          >
             {filter}
           </button>
         ))}
